@@ -1,0 +1,33 @@
+
+
+
+
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+
+    {% block title %}
+    <title>Add Task</title>
+    {% endblock %}
+
+
+{% block content %}
+<h1 align="center">Delete Task</h1>
+
+
+<div class="container">
+    <p>Are u want to delete task with tittle {{object.Tittle}}?</p>
+    <form method="post" class="jumbotron", style="50%">
+    {% csrf_token %}
+    <a  href="{% url 'delete' object.id %}"><button class="btn-btn-danger">Delete</button></a>
+
+    <a  href="{% url 'lap_list'  %}"><button class="btn-btn-warning">Cancel</button></a>
+
+    </form>
+
+</div>
+
+{% endblock %}
+
+
+
